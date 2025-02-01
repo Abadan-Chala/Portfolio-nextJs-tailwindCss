@@ -10,6 +10,9 @@ export default {
   theme: {
     extend: {
       colors: {
+        backgroundImage: {
+          'footer-bg': "url('/path/to/footer-bg-color.png')",
+        },
         lightHover: "#fcf4ff",
         darkHover: "#2a004a",
         darkTheme: "#11001F",
@@ -27,5 +30,6 @@ export default {
       },
     },
   },
+  darkMode: 'selector',
   plugins: [],
 };
