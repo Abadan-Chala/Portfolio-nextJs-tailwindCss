@@ -16,9 +16,9 @@ const Header = () => {
         <p className='max-w-2xl mx-auto font-Ovo'>
             I'm an Enthusiastic Full-Stack Developer|MERN Stack Expert with a knack for creating dynamic and responsive web applications.</p>
         <div className='flex flex-col sm:flex-row items-center gap-4 mt-4'>
-            <a href="#contact" className='px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2'>contact me <Image src={assets.right_arrow_white} alt='' className='w-4'/></a>
+            <a href="#contact" className='px-3 py-1 border border-white rounded-full bg-black text-white flex items-center gap-2'>contact me <Image src={assets.right_arrow_white} alt='' className='w-4'/></a>
 
-            <a href="/sample-resume.pdf" download className='px-10 py-3 border rounded-full border-gray-50 flex items-center gap-2'>my resume <Image src={assets.download_icon} alt='' className='w-4'/></a>
+            <a href="/sample-resume.pdf" download className='px-3 py-1 border rounded-full border-gray-50 bg-green-500 flex items-center gap-2'>download my CV <Image src={assets.download_icon} alt='' className='w-4'/></a>
         </div>
     </div>
   )
