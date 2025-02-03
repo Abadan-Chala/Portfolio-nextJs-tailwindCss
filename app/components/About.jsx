@@ -35,7 +35,7 @@ const About = ({ isDarkMode }) => {
             transition={{ duration: 0.5 }}
             className='w-full rounded-3xl'>
             <Image
-              src={assets.about} alt='me' className='w-full rounded-3xl' />
+              src={assets.about} alt='me' className='w-full rounded-[24%]' />
           </motion.div>
 
         </motion.div>
@@ -67,11 +67,11 @@ const About = ({ isDarkMode }) => {
             ))}
           </motion.ul>
 
-          <motion.h4
+          <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.3 }}
-            className='my-6 text-gray-700 font-Ovo dark:text-white/80'>Tools I use</motion.h4>
+            className='my-6 text-black-700 font-Ovo dark:text-white/80'> Tools I Prefer</motion.h3>
           <motion.ul
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
