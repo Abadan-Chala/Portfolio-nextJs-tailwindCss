@@ -74,10 +74,11 @@ export const assets = {
     send_icon,
     right_arrow_bold,
     right_arrow_bold_dark,
-    john_doe: '/garo.jpg',
-    jane_smith: '/ceo.jpg',
+    garo: '/garo.jpg',
+    abdisa: '/ceo.jpg',
+    asmare: '/asme.jpg',
     linkedin_icon: '/linkedin.png',
-    twitter_icon: '/x.jpg',
+    twitter_icon: '/x.png',
     // other assets...
 };
 

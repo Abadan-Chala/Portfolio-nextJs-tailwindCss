@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { assets } from '@/assets/assets'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import '@/styles/Testimony.css' // Import the custom CSS
 
 const Testimony = () => {
   const settings = {
@@ -19,18 +20,27 @@ const Testimony = () => {
 
   const testimonies = [
     {
-      name: 'John Doe',
-      photo: assets.john_doe,
-      description: 'John is a fantastic developer who always delivers high-quality work on time.',
+      name: 'Garoma Makure',
+      photo: assets.garo,
+      description: 'Abadanaf is a fantastic developer who always delivers high-quality products on time.',
       social: {
         linkedin: 'https://www.linkedin.com/in/johndoe',
         twitter: 'https://twitter.com/johndoe',
       },
     },
     {
-      name: 'Jane Smith',
-      photo: assets.jane_smith,
-      description: 'Jane is a creative and dedicated professional with a keen eye for detail.',
+      name: 'Asmare Admasu',
+      photo: assets.asmare,
+      description: 'I have known Abadanaf for three years. He is dedicated, fast, and hardworking. He quickly adapts to new tech stacks and stays focused on his goals.',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/johndoe',
+        twitter: 'https://twitter.com/johndoe',
+      },
+    },
+    {
+      name: 'Abdisa Baissa',
+      photo: assets.abdisa,
+      description: 'Abadanaf is a creative and dedicated professional with a keen eye for detail.',
       social: {
         linkedin: 'https://www.linkedin.com/in/janesmith',
         twitter: 'https://twitter.com/janesmith',
