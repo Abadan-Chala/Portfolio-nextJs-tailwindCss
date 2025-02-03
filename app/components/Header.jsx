@@ -39,7 +39,7 @@ const Header = () => {
               initial={{y:30, opacity: 0 }}
               whileInView={{y:0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 1 }}
-             href="#contact" className='px-3 py-1 border border-white rounded-full bg-black text-white flex items-center gap-2 dark:bg-transparent hover:bg-green-800'>contact me <Image src={assets.right_arrow_white} alt='' className='w-4'/></motion.a>
+             href="#contact" className='px-3 py-1 border border-white rounded-full bg-black text-white flex items-center gap-2 dark:bg-transparent hover:bg-green-700'>contact me <Image src={assets.right_arrow_white} alt='' className='w-4'/></motion.a>
 
             <motion.a 
             initial={{y:30, opacity: 0 }}

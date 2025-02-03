@@ -73,7 +73,12 @@ export const assets = {
     right_arrow,
     send_icon,
     right_arrow_bold,
-    right_arrow_bold_dark
+    right_arrow_bold_dark,
+    john_doe: '/garo.jpg',
+    jane_smith: '/ceo.jpg',
+    linkedin_icon: '/linkedin.png',
+    twitter_icon: '/x.jpg',
+    // other assets...
 };
 
 export const workData = [
@@ -115,3 +120,4 @@ export const infoList = [
 export const toolsData = [
     assets.vscode, assets.firebase, assets.mongodb, assets.figma, assets.git
 ];
+

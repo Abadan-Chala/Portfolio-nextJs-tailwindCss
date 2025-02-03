@@ -3,73 +3,122 @@ import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import { motion } from "motion/react"
 
-const Navbar = ({isDarkMode, setIsDarkMode}) => {
-
+const Navbar = ({ isDarkMode, setIsDarkMode }) => {
     const [isScroll, setIsScroll] = useState(false);
+    const [activeLink, setActiveLink] = useState('#top');
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const sideMenuRef = useRef();
 
     const openMenu = () => {
-        sideMenuRef.current.style.transform = 'translateX(-16rem)';
+        setIsMenuOpen(true);
+        sideMenuRef.current.style.transform = 'translateX(0)';
     }
 
     const closeMenu = () => {
+        setIsMenuOpen(false);
         sideMenuRef.current.style.transform = 'translateX(16rem)';
     }
 
     useEffect(() => {
-        window.addEventListener('scroll', ()=>{
-            if(window.scrollY > 50){
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
                 setIsScroll(true);
-            }else{
+            } else {
                 setIsScroll(false);
             }
-        })
-    }, [])
-  return (
-    <>
-    <div className='fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80% dark:hidden'>
-        <Image src={assets.header_bg_color} alt='A' className='w-full'/>
-    </div>
-      <nav className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-2 flex items-center justify-between z-50 ${isScroll ? 'bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20' : ''}`}>
-        <motion.a 
-        animate={{opacity: 1, y: 0, scale: 1, rotate: 360, transition: {duration: 1}}}
-        whileHover={{scale: 1.2, rotate: -5, transition: {duration: 1}, delay: 0.5}}
-        href="#top">
-            <Image src={assets.logo} alt='AC' className='w-8 cursor-pointer mr-14'/>
-        </motion.a>
-        <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll ? "" : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"}`}>
-            <li><a className='font-Ovo' href="#top">Home</a></li>
-            <li><a className='font-Ovo' href="#about">About me</a></li>
-            <li><a className='font-Ovo' href="#services">Services</a></li>
-            <li><a className='font-Ovo' href="#work">My work</a></li>
-            <li><a className='font-Ovo' href="#contact">Contact me</a></li>
-        </ul>
-        <div className='flex items-center gap-4'>
-            <button onClick={()=> setIsDarkMode(prev => !prev)}>
-                <Image src={isDarkMode ? assets.sun_icon : assets.moon_icon} alt='dark' className='w-6'/>
-            </button>
-            <a href="#contact" className='hidden lg:flex items-center gap-3 px-3 py-1 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50' >Contact 
-            <Image src={isDarkMode ? assets.arrow_icon_dark : assets.arrow_icon} alt='A' className='w-3'/></a>
-            <button className='block md:hidden ml-3' onClick={openMenu}>
-                <Image src={isDarkMode ? assets.menu_white : assets.menu_black} alt='menu' className='w-4'/>
-            </button>
-        </div>
+        });
 
-        {/* mobile menu */}
-        <ul ref={sideMenuRef} className='flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500  dark:bg-darkHover dark:text-white'>
-            <div className='absolute top-6 right-6' onClick={closeMenu}>
-                <Image src={isDarkMode ? assets.close_white : assets.close_black} alt='X' className='w-5 cursor-pointer'/>
+        const handleClickOutside = (event) => {
+            if (sideMenuRef.current && !sideMenuRef.current.contains(event.target)) {
+                closeMenu();
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
+    const handleLinkClick = (href) => {
+        setActiveLink(href);
+        closeMenu();
+    };
+
+    return (
+        <>
+            <div className='fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80% dark:hidden'>
+                <Image src={assets.header_bg_color} alt='A' className='w-full' />
             </div>
-            <li><a className='font-Ovo' onClick={closeMenu} href="#top">Home</a></li>
-            <li><a className='font-Ovo' onClick={closeMenu} href="#about">About me</a></li>
-            <li><a className='font-Ovo' onClick={closeMenu} href="#services">Services</a></li>
-            <li><a className='font-Ovo' onClick={closeMenu} href="#work">My work</a></li>
-            <li><a className='font-Ovo' onClick={closeMenu} href="#contact">Contact me</a></li>
-        </ul>
-      </nav>
-    </>
-  )
+            <nav className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-2 flex items-center justify-between z-50 ${isScroll ? 'bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20' : ''}`}>
+                <motion.a
+                    animate={{ opacity: 1, y: 0, scale: 1, rotate: 360, transition: { duration: 1 } }}
+                    whileHover={{ scale: 1.1, rotate: -360, transition: { duration: 2, delay: 0.8 } }}
+                    href="#top">
+                    <Image src={assets.logo} alt='AC' className='w-8 cursor-pointer mr-14' />
+                </motion.a>
+                <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll ? "" : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"}`}>
+                    <li><a
+                            className={`font-Ovo ${activeLink === '#top' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`}
+                            href="#top"
+                            onClick={() => handleLinkClick('#top')}>Home
+                        </a>
+                    </li>
+                    <li><a
+                            className={`font-Ovo ${activeLink === '#about' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`}
+                            href="#about"
+                            onClick={() => handleLinkClick('#about')}>About me
+                        </a>
+                    </li>
+                    <li><a
+                            className={`font-Ovo ${activeLink === '#services' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`}
+                            href="#services"
+                            onClick={() => handleLinkClick('#services')}>Services
+                        </a>
+                    </li>
+                    <li><a
+                            className={`font-Ovo ${activeLink === '#work' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`}
+                            href="#work"
+                            onClick={() => handleLinkClick('#work')}>My works
+                        </a>
+                    </li>
+                    <li><a
+                            className={`font-Ovo ${activeLink === '#testimony' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`}
+                            href="#testimony"
+                            onClick={() => handleLinkClick('#testimony')}>Testimony
+                        </a>
+                    </li>
+                </ul>
+                <div className='flex items-center gap-4'>
+                    <button onClick={() => setIsDarkMode(prev => !prev)}>
+                        <Image src={isDarkMode ? assets.sun_icon : assets.moon_icon} alt='dark' className='w-6' />
+                    </button>
+                    <a href="#contact" className={`hidden lg:flex items-center gap-3 px-2 py-1 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50 ${activeLink === '#contact' ? 'bg-green-700' : 'hover:text-green-500 focus:text-blue-500'}`} onClick={() => handleLinkClick('#contact')}>
+                        Contact
+                        <Image src={isDarkMode ? assets.arrow_icon_dark : assets.arrow_icon} alt='A' className='w-3' />
+                    </a>
+                    <button className='block md:hidden ml-3' onClick={openMenu}>
+                        <Image src={isDarkMode ? assets.menu_white : assets.menu_black} alt='menu' className='w-4' />
+                    </button>
+                </div>
+
+                {/* mobile menu */}
+                <ul ref={sideMenuRef} className={`flex md:hidden flex-col gap-4 py-20 px-10 fixed ${isMenuOpen ? 'right-0' : '-right-64'} top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 dark:bg-darkHover dark:text-white`}>
+                    <div className='absolute top-6 right-6' onClick={closeMenu}>
+                        <Image src={isDarkMode ? assets.close_white : assets.close_black} alt='X' className='w-5 cursor-pointer hover:bg-red-500' />
+                    </div>
+                    <li><a className={`font-Ovo ${activeLink === '#top' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`} onClick={() => handleLinkClick('#top')} href="#top">Home</a></li>
+                    <li><a className={`font-Ovo ${activeLink === '#about' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`} onClick={() => handleLinkClick('#about')} href="#about">About me</a></li>
+                    <li><a className={`font-Ovo ${activeLink === '#services' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`} onClick={() => handleLinkClick('#services')} href="#services">Services</a></li>
+                    <li><a className={`font-Ovo ${activeLink === '#work' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`} onClick={() => handleLinkClick('#work')} href="#work">My work</a></li>
+                    <li><a className={`font-Ovo ${activeLink === '#testimony' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`} onClick={() => handleLinkClick('#testimony')} href="#testimony">Testimony</a></li>
+                    <li><a className={`font-Ovo ${activeLink === '#contact' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`} onClick={() => handleLinkClick('#contact')} href="#contact">Contact me</a></li>
+                </ul>
+            </nav>
+        </>
+    )
 }
 
 export default Navbar
