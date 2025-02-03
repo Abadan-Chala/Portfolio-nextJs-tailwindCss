@@ -1,6 +1,7 @@
 import { assets } from '@/assets/assets'
 import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
+import { motion } from "motion/react"
 
 const Navbar = ({isDarkMode, setIsDarkMode}) => {
 
@@ -31,9 +32,12 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
         <Image src={assets.header_bg_color} alt='A' className='w-full'/>
     </div>
       <nav className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-2 flex items-center justify-between z-50 ${isScroll ? 'bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20' : ''}`}>
-        <a href="#top">
+        <motion.a 
+        animate={{opacity: 1, y: 0, scale: 1, rotate: 360, transition: {duration: 1}}}
+        whileHover={{scale: 1.2, rotate: -5, transition: {duration: 1}, delay: 0.5}}
+        href="#top">
             <Image src={assets.logo} alt='AC' className='w-8 cursor-pointer mr-14'/>
-        </a>
+        </motion.a>
         <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll ? "" : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"}`}>
             <li><a className='font-Ovo' href="#top">Home</a></li>
             <li><a className='font-Ovo' href="#about">About me</a></li>
