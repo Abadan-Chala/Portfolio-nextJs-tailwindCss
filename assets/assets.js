@@ -77,6 +77,8 @@ export const assets = {
     garo: '/garo.jpg',
     abdisa: '/ceo.jpg',
     asmare: '/asme.jpg',
+    samuel: '/graduation.jpg',
+    abay: '/abay.jpg',
     linkedin_icon: '/linkedin.png',
     twitter_icon: '/x.png',
     // other assets...
