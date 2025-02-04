@@ -25,8 +25,8 @@ const Testimony = () => {
       photo: assets.garo,
       description: 'Abadanaf is a fantastic developer who always delivers high-quality products on time. He is a great team player and a pleasure to work with. I highly recommend him to anyone looking for a skilled developer.',
       social: {
-        linkedin: 'https://www.linkedin.com/in/johndoe',
-        twitter: 'https://twitter.com/johndoe',
+        linkedin: 'https://www.linkedin.com/in/garomamakure',
+        twitter: 'https://twitter.com/garomamakure',
       },
     },
     {
@@ -34,8 +34,8 @@ const Testimony = () => {
       photo: assets.abay,
       description: 'I have worked with Abadanaf on several projects, and he has always impressed me with his technical skills and professionalism. He is a dedicated developer who is always willing to go the extra mile to ensure the success of his projects.',
       social: {
-        linkedin: 'https://www.linkedin.com/in/johndoe',
-        twitter: 'https://twitter.com/johndoe',
+        linkedin: 'https://www.linkedin.com/in/abaytesfaye',
+        twitter: 'https://twitter.com/abaytesfaye',
       },
     },
     {
@@ -43,8 +43,8 @@ const Testimony = () => {
       photo: assets.abdisa,
       description: 'Abadanaf is a creative and dedicated professional with a keen eye for detail. He is a talented developer who is always looking for ways to improve his skills and deliver high-quality products. ',
       social: {
-        linkedin: 'https://www.linkedin.com/in/janesmith',
-        twitter: 'https://twitter.com/janesmith',
+        linkedin: 'https://www.linkedin.com/in/abdibaisa',
+        twitter: 'https://twitter.com/abdibaisa',
       },
     },
     {
@@ -52,8 +52,8 @@ const Testimony = () => {
       photo: assets.asmare,
       description: 'I have known Abadanaf for several years and have always been impressed by his dedication and work ethic. He is a talented developer who is always looking for ways to improve his skills. ',
       social: {
-        linkedin: 'https://www.linkedin.com/in/johndoe',
-        twitter: 'https://twitter.com/johndoe',
+        linkedin: 'https://www.linkedin.com/in/asmaradmasu',
+        twitter: 'https://twitter.com/asmaradmasu',
       },
     },
     {
@@ -61,8 +61,8 @@ const Testimony = () => {
       photo: assets.samuel,
       description: 'I got to know Abadanaf when he was working on a project for our company. He is a talented developer who is always willing to go the extra mile to ensure the success of his projects.',
       social: {
-        linkedin: 'https://www.linkedin.com/in/janesmith',
-        twitter: 'https://twitter.com/janesmith',
+        linkedin: 'https://www.linkedin.com/in/samuelyirdaw',
+        twitter: 'https://twitter.com/samuelyirdaw',
       },
     },
     // Add more testimonies as needed
@@ -103,7 +103,7 @@ const Testimony = () => {
               whileHover={{ rotate: 15, scale: 1.1, transition: { duration: 0.8 } }}
               transition={{ duration: 0.8, type: 'spring', stiffness: 100 }}
             >
-              <Image src={testimony.photo} alt={testimony.name} width={128} height={128} className='w-32 h-32 rounded-full mx-auto mb-4 cursor-pointer' />
+              <Image src={testimony.photo} alt={testimony.name} width={128} height={128} className='w-32 h-32 rounded-full mx-auto mb-4 cursor-pointer mt-2' />
             </motion.div>
 
             <motion.h3
@@ -115,7 +115,8 @@ const Testimony = () => {
               {testimony.name}
             </motion.h3>
             <motion.p
-              className='max-w-xl mx-auto mt-4'
+            whileHover={{ scale: 1.02, transition: { duration: 0.8, delay:0.3 } }}
+              className='max-w-xl mx-auto mt-4 border border-gray-300 p-2 rounded-lg mx-auto shadow-lg dark:bg-darkHover/30 cursor-pointer hover:shadow-xl hover:border-green-200'
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.3 }}

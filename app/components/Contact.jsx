@@ -52,7 +52,9 @@ const Contact = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.7 }}
-        className='text-center max-w-2-xl mx-auto mt-5 mb-12 font-Ovo'>I'm always eager to learn new technologies and improve my skills. I'm currently looking for new opportunities to work on exciting projects and collaborate with other developers.</motion.p>
+        className='text-center max-w-2-xl mx-auto mt-5 mb-12 font-Ovo'>
+        If you have any questions, feedback, or inquiries, feel free to reach out to me. I am always available to discuss new projects, collaborations, and opportunities. I look forward to hearing from you!
+        </motion.p>
 
       <motion.form
         initial={{ opacity: 0 }}
@@ -85,7 +87,7 @@ const Contact = () => {
         whileHover={{scale:1.05}}
         transition={{duration:0.3}}
         type='submit'
-          className='py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover'
+          className='py-2 px-5 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover'
         >Submit now <Image src={assets.right_arrow_white} alt='...' className='w-4' /></motion.button>
         <p className='mt-4'>{result}</p>
       </motion.form>
