@@ -84,24 +84,40 @@ export const assets = {
 
 export const workData = [
     {
-        title: 'Frontend project',
+        title: 'Food delivery',
         description: 'Web Design',
-        bgImage: '/work-1.png',
+        bgImage: '/work1.png',
+        link: 'https://github.com/Abadan-Chala',
     },
     {
-        title: 'Geo based app',
+        title: 'Visit Oromia',
         description: 'Mobile App',
-        bgImage: '/work-2.png',
+        bgImage: '/work2.png',
+        link: 'https://github.com/Abadan-Chala',
     },
     {
-        title: 'Photography site',
-        description: 'Web Design',
-        bgImage: '/work-3.png',
+        title: 'TR Academy',
+        description: 'Graphics Design',
+        bgImage: '/work3.jpg',
+        link: 'https://github.com/Abadan-Chala',
     },
     {
-        title: 'UI/UX designing',
+        title: 'E-commerce',
         description: 'UI/UX Design',
+        bgImage: '/work4.png',
+        link: 'https://github.com/Abadan-Chala',
+    },
+    {
+        title: 'University logo',
+        description: 'graphics Design',
         bgImage: '/work-4.png',
+        link: 'https://github.com/Abadan-Chala',
+    },
+    {
+        title: 'GEO location',
+        description: 'mobile App',
+        bgImage: '/work-2.png',
+        link: 'https://github.com/Abadan-Chala',
     },
 ]
 

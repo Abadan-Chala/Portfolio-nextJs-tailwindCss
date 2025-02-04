@@ -29,7 +29,7 @@ const Services = () => {
         whileInView={{ opacity: 1}}
         transition={{ duration: 0.5, delay: 0.7 }}
         className='text-center max-w-2-xl mx-auto mt-5 mb-12 font-Ovo'>
-        I offer modern web development with HTML, CSS, JavaScript, and React; cross-platform mobile app development with React Native; scalable backend systems with Node.js and Express.js; full-stack solutions using the MERN stack; intuitive UI/UX design; and expert consulting on technology and best practices. Let's collaborate to bring your ideas to life!
+        I offer modern web development with HTML, CSS(Tailwind) and JavaScript(React, Next); cross-platform mobile app development with React Native; scalable backend systems with Node.js and Express.js; full-stack solutions using the MERN stack; intuitive UI/UX design; and expert consulting on technology and best practices. Let's collaborate to bring your ideas to life!
       </motion.p>
 
       <motion.div 
