@@ -5,7 +5,7 @@ import { motion } from "motion/react"
 
 const Footer = ({ isDarkMode }) => {
   return (
-    <div className='mt-20'>
+    <div className='mt-20 bg-[url("/footer-bg-color.png")] bg-no-repeat bg-center'>
 
       <motion.div
         className='text-center'
