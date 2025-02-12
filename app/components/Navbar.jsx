@@ -113,11 +113,11 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                     <button onClick={() => setIsDarkMode(prev => !prev)}>
                         <Image src={isDarkMode ? assets.sun_icon : assets.moon_icon} alt='dark' className='w-6' />
                     </button>
-                    <a href="#contact" className={`hidden lg:flex items-center gap-3 px-2 py-1 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50 ${activeLink === '#contact' ? 'bg-green-700' : 'hover:text-green-500 focus:text-blue-500'}`} onClick={() => handleLinkClick('#contact')}>
+                    <a href="#contact" className={`hidden lg:flex items-center gap-3 px-2 py-1 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50 ${activeLink === '#contact' ? 'bg-green-700' : 'hover:bg-green-800 transition duration-500 focus:text-blue-500'}`} onClick={() => handleLinkClick('#contact')}>
                         Contact
                         <Image src={isDarkMode ? assets.arrow_icon_dark : assets.arrow_icon} alt='A' className='w-3' />
                     </a>
-                    <a href="https://www.upwork.com/ab/account-security/login?redir=%2Fnx%2Ffind-work%2F" target="_blank" rel="noopener noreferrer" className={`hidden lg:flex items-center gap-3 px-2 py-2 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50 ${activeLink === 'https://www.upwork.com/ab/account-security/login?redir=%2Fnx%2Ffind-work%2F' ? 'bg-green-700' : 'hover:bg-green-800 focus:text-blue-500'}`} onClick={() => handleLinkClick('https://www.upwork.com/ab/account-security/login?redir=%2Fnx%2Ffind-work%2F')}>
+                    <a href="https://www.upwork.com/ab/account-security/login?redir=%2Fnx%2Ffind-work%2F" target="_blank" rel="noopener noreferrer" className={`hidden lg:flex items-center gap-3 px-2 py-2 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50 ${activeLink === 'https://www.upwork.com/ab/account-security/login?redir=%2Fnx%2Ffind-work%2F' ? 'bg-green-700' : 'hover:bg-green-800 transition duration-500 focus:text-blue-500'}`} onClick={() => handleLinkClick('https://www.upwork.com/ab/account-security/login?redir=%2Fnx%2Ffind-work%2F')}>
                         <Image src={assets.upwork} alt='A' className='w-20' />
                     </a>
                     <button className='block md:hidden ml-3' onClick={openMenu}>
@@ -126,17 +126,18 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                 </div>
 
                 {/* mobile menu */}
-                <ul ref={sideMenuRef} className={`flex md:hidden flex-col gap-4 py-20 px-10 fixed ${isMenuOpen ? 'right-0' : '-right-64'} top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 dark:bg-darkHover dark:text-white`}>
+                <ul ref={sideMenuRef} className={`flex md:hidden flex-col gap-4 py-20 px-10 fixed ${isMenuOpen ? 'right-0' : '-right-64'} top-0 bottom-0 w-50 z-50 h-screen bg-rose-50 transition duration-500 dark:bg-darkHover dark:text-white`}>
                     <div className='absolute top-6 right-6' onClick={closeMenu}>
                         <Image src={isDarkMode ? assets.close_white : assets.close_black} alt='X' className='w-5 cursor-pointer hover:bg-red-500' />
                     </div>
                     <li><a className={`font-Ovo ${activeLink === '#top' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`} onClick={() => handleLinkClick('#top')} href="#top">Home</a></li>
                     <li><a className={`font-Ovo ${activeLink === '#about' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`} onClick={() => handleLinkClick('#about')} href="#about">About me</a></li>
                     <li><a className={`font-Ovo ${activeLink === '#services' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`} onClick={() => handleLinkClick('#services')} href="#services">Services</a></li>
-                    <li><a className={`font-Ovo ${activeLink === '#work' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`} onClick={() => handleLinkClick('#work')} href="#work">My work</a></li>
+                    <li><a className={`font-Ovo ${activeLink === '#work' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`} onClick={() => handleLinkClick('#work')} href="#work">My works</a></li>
                     <li><a className={`font-Ovo ${activeLink === '#testimony' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`} onClick={() => handleLinkClick('#testimony')} href="#testimony">Testimony</a></li>
                     <li><a className={`font-Ovo ${activeLink === '#contact' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`} onClick={() => handleLinkClick('#contact')} href="#contact">Contact me</a></li>
                     <li><a className={`font-Ovo ${activeLink === 'https://www.upwork.com/ab/account-security/login?redir=%2Fnx%2Ffind-work%2F' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`} onClick={() => handleLinkClick('https://www.upwork.com/ab/account-security/login?redir=%2Fnx%2Ffind-work%2F')} href="https://www.upwork.com/ab/account-security/login?redir=%2Fnx%2Ffind-work%2F">Upwork</a></li>
+                    <li><a className={`font-Ovo ${activeLink === 'https://github.com/Abadan-Chala' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`} onClick={() => handleLinkClick('https://github.com/Abadan-Chala')} href="https://github.com/Abadan-Chala">Github</a></li>
                 </ul>
             </nav>
         </>
