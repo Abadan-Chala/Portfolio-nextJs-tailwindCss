@@ -23,7 +23,7 @@ const About = ({ isDarkMode }) => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         className='flex w-full flex-col lg:flex-row items-center gap-20 my-10'>
-          
+
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -44,11 +44,17 @@ const About = ({ isDarkMode }) => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
           className='flex-1'>
-          <h3 className='mb-10 max-w-2xl font-Ovo'>I'm a Full-Stack Developer. Pursuing a degree in Software Engineering at Haramaya University, where I am in my 4<sup>th</sup> year of study(2024).
-            I have a strong passion for web and mobile application development. I enjoy creating dynamic and responsive web applications that provide a seamless user experience.  <br />
-            I have hands-on experience working with the MERN stack (MongoDB, Express.js, React, Node.js) and have built several web applications using these technologies.
-            I am always eager to learn new technologies and improve my skills. I am currently looking for new opportunities to work on exciting projects and collaborate with other developers. <br />
-             My goal is to continuously grow as a developer and contribute to impactful projects.</h3>
+          <h3 className='mb-10 max-w-2xl font-Ovo'>
+            <strong>I'm Abadanaf Chala</strong>, a passionate Full-Stack Developer currently pursuing a degree in <strong>Software Engineering</strong> at Haramaya University, where I am in my 4<sup>th</sup> year (2024) of study.
+            <br />
+            I have a strong enthusiasm for <strong>web and mobile application development</strong>. My experience includes creating dynamic and responsive web applications that ensure a seamless user experience.
+            <br />
+            I specialize in the <strong>MERN stack</strong> (MongoDB, Express.js, React, Node.js) and have successfully built several web applications utilizing these technologies. My projects have enabled me to develop a solid understanding of both front-end and back-end development.
+            <br />
+            I am always eager to learn new technologies and enhance my skills. Currently, I am seeking opportunities to work on exciting projects and collaborate with other developers.
+            <br />
+            My goal is to continuously grow as a developer and contribute to impactful projects that make a difference in the community.
+          </h3>
 
           <motion.ul
             initial={{ opacity: 0 }}
@@ -79,8 +85,8 @@ const About = ({ isDarkMode }) => {
             className='flex items-center gap-3 sm:gap-5'>
             {toolsData.map((tool, index) => (
               <motion.li
-              whileHover={{ scale: 1.2, rotate: -360, transition: { duration: 0.1, delay: 0.1 } }}
-              className='flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500'
+                whileHover={{ scale: 1.2, rotate: -360, transition: { duration: 0.1, delay: 0.1 } }}
+                className='flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500'
                 key={index}>
                 <Image src={tool} alt='tool' className='w-5 sm:w-7' />
               </motion.li>
