@@ -79,7 +79,7 @@ const About = ({ isDarkMode }) => {
             className='flex items-center gap-3 sm:gap-5'>
             {toolsData.map((tool, index) => (
               <motion.li
-              whileHover={{ scale: 1.1, rotate: -360, transition: { duration: 0.1, delay: 0.1 } }}
+              whileHover={{ scale: 1.2, rotate: -360, transition: { duration: 0.1, delay: 0.1 } }}
               className='flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500'
                 key={index}>
                 <Image src={tool} alt='tool' className='w-5 sm:w-7' />

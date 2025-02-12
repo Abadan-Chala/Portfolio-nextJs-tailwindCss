@@ -74,6 +74,8 @@ export const assets = {
     send_icon,
     right_arrow_bold,
     right_arrow_bold_dark,
+    bgdark: '/dark.mp4',
+    bgwhite: '/white.mp4',
     garo: '/garo.jpg',
     abdisa: '/ceo.jpg',
     asmare: '/asme.jpg',

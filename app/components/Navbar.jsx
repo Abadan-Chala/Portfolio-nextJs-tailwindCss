@@ -49,8 +49,26 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
 
     return (
         <>
-            <div className='fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80% dark:hidden'>
-                <Image src={assets.header_bg_color} alt='A' className='w-full' />
+            <div className='fixed top-0 left-0 w-full h-full -z-10'>
+                {isDarkMode ? (
+                    <video
+                        src={assets.bgdark}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className='w-full h-full object-cover opacity-50'
+                    />
+                ) : (
+                    <video
+                        src={assets.bgwhite}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className='w-full h-full object-cover opacity-75'
+                    />
+                )}
             </div>
             <nav className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-2 flex items-center justify-between z-50 ${isScroll ? 'bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20' : ''}`}>
                 <motion.a
@@ -61,34 +79,34 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                 </motion.a>
                 <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${isScroll ? "" : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"}`}>
                     <li><a
-                            className={`font-Ovo ${activeLink === '#top' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`}
-                            href="#top"
-                            onClick={() => handleLinkClick('#top')}>Home
-                        </a>
+                        className={`font-Ovo ${activeLink === '#top' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`}
+                        href="#top"
+                        onClick={() => handleLinkClick('#top')}>Home
+                    </a>
                     </li>
                     <li><a
-                            className={`font-Ovo ${activeLink === '#about' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`}
-                            href="#about"
-                            onClick={() => handleLinkClick('#about')}>About me
-                        </a>
+                        className={`font-Ovo ${activeLink === '#about' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`}
+                        href="#about"
+                        onClick={() => handleLinkClick('#about')}>About me
+                    </a>
                     </li>
                     <li><a
-                            className={`font-Ovo ${activeLink === '#services' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`}
-                            href="#services"
-                            onClick={() => handleLinkClick('#services')}>Services
-                        </a>
+                        className={`font-Ovo ${activeLink === '#services' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`}
+                        href="#services"
+                        onClick={() => handleLinkClick('#services')}>Services
+                    </a>
                     </li>
                     <li><a
-                            className={`font-Ovo ${activeLink === '#work' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`}
-                            href="#work"
-                            onClick={() => handleLinkClick('#work')}>My works
-                        </a>
+                        className={`font-Ovo ${activeLink === '#work' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`}
+                        href="#work"
+                        onClick={() => handleLinkClick('#work')}>My works
+                    </a>
                     </li>
                     <li><a
-                            className={`font-Ovo ${activeLink === '#testimony' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`}
-                            href="#testimony"
-                            onClick={() => handleLinkClick('#testimony')}>Testimony
-                        </a>
+                        className={`font-Ovo ${activeLink === '#testimony' ? 'text-green-500' : 'hover:text-green-500 focus:text-blue-500'}`}
+                        href="#testimony"
+                        onClick={() => handleLinkClick('#testimony')}>Testimony
+                    </a>
                     </li>
                 </ul>
                 <div className='flex items-center gap-4'>
